@@ -1,0 +1,58 @@
+<% content_for(:title, "Alexandar Castaneda") %>
+
+<div class ="container">
+  <div id="col-md-12">
+    <div id="row well">
+      <h1 class="strong">Alexandar Castaneda</h1>
+
+      <h4 class="lead">Some cool and nerdy phrase!</h4>
+    </div>
+
+    <div id="row col-md-6">
+      <ul>
+        <% @skills.each do |skill| %>
+          <div id="row well">
+            <li> <%= link_to skill.name, skill_path(skill) %> </li>
+          </div>
+        <% end %>
+      </ul>
+      <p>
+        <%= link_to "Add Skill", new_skill_path(@skill), :class => "btn btn-default" %>
+      </p>
+    </div>
+    <div id="col-md-6">
+
+    </div>
+<hr>
+
+    <div id="row well">
+      <p class="lead">
+        About this guy....
+      </p>
+      <div>
+        And you know, I'm tired ... I'm so tired of pretending like my life
+        isn't perfect and bitchin' and just winning every second .... And I'm not
+        perfect and bitchin', and just delivering the goods at every frickin' turn.
+        It's being directed and written by a genius name David Ward who - oh, I
+        don't know - won the Academy Award at 23 for writing The Sting. And it was
+        his pen and his vision that created the classic that we know today as Major
+        League. Yeah. I did. Because he's nothing shy of that. And it is his job to
+        go out there and embarrass people. Embarrass them. Not just beat them, but
+        embarrass them in the process.
+      </div>
+      <p></p>
+      <div>
+        Yeah, I didn't care about that vanity card. In fact, I went straight
+        on with that one and just dispelled that one. And you know, I'm tired ...
+        I'm so tired of pretending like my life isn't perfect and bitchin' and just
+        winning every second .... And I'm not perfect and bitchin', and just
+        delivering the goods at every frickin' turn. But like in baseball, the
+        scoreboard doesn't lie. Never has. So what we all have is a marriage of the
+        heart ... of the hearts.
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
