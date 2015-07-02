@@ -1,8 +1,9 @@
 <% content_for(:title, "Add New Project") %>
 
 <div class= "container">
-
-<h1>New project for <%= @skill.name %></h1>
+  <div class="page-header">
+    <h1>New project for <%= @skill.name %></h1>
+  </div>
 
 <%= render 'form' %>
 

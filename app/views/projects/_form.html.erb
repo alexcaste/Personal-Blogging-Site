@@ -1,18 +1,12 @@
 <%= render "layouts/errors", :object => @project %>
 
 <div id="container">
-  <div id="row ">
-    <form class="form-horizontal" role="form">
-      <div class="form-group">
-        <%= form_for [@skill, @project] do |f| %>
-          <%= f.label :name %>
-          <%= f.text_field :name %>
-          <%= f.label :description %>
-          <%= f.text_field :description %>
+  <%= form_for [@skill, @project] do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
 
-          <p><%= f.submit :class => "btn btn-sucess"%></p>
-        <% end %>
-      </div>
-    </form>
-  </div>
+    <%= f.submit :class => "btn btn-sm btn-sucess"%>
+  <% end %>
 </div>
