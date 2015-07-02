@@ -18,7 +18,7 @@ class SkillsController < ApplicationController
   def update
     @skill = Skill.find(params[:id])
     if @skill.update(skill_params)
-      redirect_to skills_path
+      redirect_to skill_path(@skill)
     else
       render :edit
     end

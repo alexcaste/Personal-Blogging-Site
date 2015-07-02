@@ -16,12 +16,9 @@
           <%= link_to "Add Even More Skills", new_skill_path(@skill), :class => "btn btn-xs btn-default" %>
         </span>
       </h4>
-      <ul>
+      <ul class="list-unstyled">
         <% @skills.each do |skill| %>
-          <div id="row well">
-            <li> <%= link_to skill.name, skill_path(skill) %>
-            </li>
-          </div>
+            <li class="well text-center"> <%= link_to skill.name, skill_path(skill) %></li>
         <% end %>
       </ul>
       <p>

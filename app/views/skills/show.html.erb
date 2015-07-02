@@ -1,25 +1,34 @@
 <% content_for(:title, @skill.name) %>
 <div class ="container">
   <div class="page-header">
-    <h1><%= yield(:title) %></h1>
+    <h1><%= yield(:title) %>
+    <span class="pull-right">
+      <%= link_to "Edit", edit_skill_path(@skill), :class => "btn btn-xs btn-warning" %>
+      <%= link_to "Delete", skill_path(@skill),
+                                :data => {:confirm => "Are you sure?",
+                                :method => "delete"}, :class => "btn btn-danger btn-xs " %>
+    </span>
+    </h1>
   </div>
 
-<h4><%= @skill.description %></h4>
+<p>
+  <span class="lead">
+    Description:
+  </span>
+  <%= @skill.description %>
+</p>
 
+  <span class="pull-right">
+    <%= link_to "Add a project", new_skill_project_path(@skill), :class => "btn btn-xs btn-success" %>
+  </span>
 <% if @skill.projects.any? %>
-  <h4>Projects:</h4>
+  <h3>Projects:
+</h3>
 
-  <ul>
+  <ul class="list-unstyled">
     <% @skill.projects.each do |project| %>
-      <li class="well">
-        <span class="lead"><%= project.name %>:</span>
-        <%= project.description %>
-        <span class="col-md-offset-1">
-          <%= link_to "Edit", edit_skill_project_path(@skill, project), :class => "btn btn-xs btn-warning" %>
-          <%= link_to "Delete", skill_project_path(@skill, project),
-                  :data => {:confirm => "Are you sure?",
-                  :method => "delete"}, :class => "btn btn-xs btn-danger" %>
-        </span>
+      <li class="well text-center">
+        <span class="lead"><%= link_to project.name, skill_project_path(@skill, project) %></span>
       </li>
     <% end %>
   </ul>
@@ -27,12 +36,5 @@
   <p>No projects have been added yet.</p>
   <% end %>
 <hr>
-  <p>
-    <%= link_to "Add a project", new_skill_project_path(@skill), :class => "btn btn-sm btn-success" %>
-    <%= link_to "Edit Skill", edit_skill_path(@skill), :class => "btn btn-sm btn-warning" %>
-    <%= link_to "Delete Skill", skill_path(@skill),
-                              :data => {:confirm => "Are you sure?",
-                              :method => "delete"}, :class => "btn btn-danger btn-sm " %>
-
-              <%= link_to "Return to Home", skills_path, :class => "btn btn-sm btn-default" %></p>
+  <p><%= link_to "Return to Home", skills_path, :class => "btn btn-sm btn-block btn-default" %></p>
 </div>

@@ -1,0 +1,31 @@
+<% content_for(:title, @project.name) %>
+
+<div class ="container">
+  <div class="page-header">
+    <h1><%= yield(:title) %>
+      <span class="pull-right">
+        <%= link_to "Edit", edit_skill_project_path(@skill, @project), :class => "btn btn-xs btn-warning" %>
+        <%= link_to "Delete", skill_project_path(@skill, @project),
+                                  :data => {:confirm => "Are you sure?",
+                                  :method => "delete"}, :class => "btn btn-danger btn-xs " %>
+    </span>
+    </h1>
+  </div>
+
+  <p>
+    <span class="lead">
+      Description:
+    </span>
+    <%= @project.description %>
+  </p>
+  <p>
+    <span class="lead">
+      Link:
+    </span>
+    <%= @project.link %>
+  </p>
+
+<hr>
+  <p><%= link_to @skill.name, skill_path(@skill), :class => "btn btn-sm btn-block btn-info" %></p>
+  <p><%= link_to "Home", skills_path, :class => "btn btn-sm btn-block btn-default" %></p>
+</div>
