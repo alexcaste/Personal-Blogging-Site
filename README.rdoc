@@ -13,13 +13,21 @@ Configuration:
 To create this app on your own system follow the prompts below
 
 Start Postgres
+
 Run Terminal Commands 
+
 $ https://github.com/alexcaste/epicodus-portfolio.git
+
 $ bundler install 
+
 $ rake db:create 
+
 $ rake db:migrate 
+
 $ rails s
+
 Open a browser window and navigate to localhost:3000
+
 Testing:
 
 This app uses rspec and cabybara for unit and integration testing. To see the results of these tests follow the Configuration Instructions above except for running the rails server. Then run terminal command: $ rspec
