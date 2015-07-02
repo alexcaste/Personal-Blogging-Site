@@ -28,16 +28,6 @@ $ rails s
 
 Open a browser window and navigate to localhost:3000
 
-Testing:
-
-This app uses rspec and cabybara for unit and integration testing. 
-
-To see the results of these tests follow the Configuration Instructions above except for running the rails server. 
-
-Then run terminal command: 
-
-$ rspec
-
 Copyright and License
 
 Copyright © 2015 - Alexandar Castaneda
