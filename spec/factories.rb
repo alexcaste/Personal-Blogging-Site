@@ -17,4 +17,13 @@ FactoryGirl.define do
     description 'i dont know if rspec and capybara are mature enough for people to be relying on them so much.'
     link 'mygripe@complaint.com'
   end
+
+  factory(:post) do
+    title 'Deez Nutz'
+    body 'Hella Hella Hella Hella'
+  end
+
+  factory(:comment) do
+    body 'Damn you fine'
+  end
 end

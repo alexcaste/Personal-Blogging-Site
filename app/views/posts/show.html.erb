@@ -1,0 +1,44 @@
+<%= content_for(:title, "#{@post.title}") %>
+
+<h1 class="page-header"><%= @post.title %>
+<% if can? :update, @post %>
+  <span class="pull-right">
+    <%= link_to "Edit", edit_post_path(@post), :class => "btn btn-xs btn-warning", id: "edit" %>
+    <%= link_to "Delete", post_path(@post),
+                              :data => {:confirm => "Are you sure?",
+                              :method => "delete"}, :class => "btn btn-danger btn-xs ", id: "delete" %>
+  </span>
+<% end %>
+</h1>
+<div id= "post">
+<p>
+  <%= @post.body %>
+</p>
+<p class="pull-right">
+  Originally Post by <cite><%= link_to @post.user.first_name, user_path(@post.user) %></cite>
+
+</p>
+<h3> <%= @post.comments.length %> Comment(s)</h3>
+</div>
+<% @post.comments.each do |comment| %>
+
+
+  <blockquote>
+  <p class="row well">
+      <%= comment.body %>
+      <% if can? :update, comment %>
+        <span class="pull-right">
+          <%= link_to "Edit", edit_post_comment_path(@post, comment), :class => "btn btn-xs btn-warning", id: "edit" %>
+          <%= link_to "Delete", post_comment_path(@post, comment),
+                                    :data => {:confirm => "Are you sure?",
+                                    :method => "delete"}, :class => "btn btn-danger btn-xs ", id: "delete" %>
+        </span>
+
+      <% end %>
+    <small>says <cite><%= link_to comment.user.first_name, user_path(comment.user.first_name) %></cite></small>
+    </p>
+  </blockquote>
+<% end %>
+<div id="answer-question">
+  <%= render 'comments/form' %>
+</div>

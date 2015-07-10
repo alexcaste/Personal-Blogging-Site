@@ -1,0 +1,8 @@
+<%= render "layouts/errors", object: @post %>
+
+
+<%= bootstrap_form_for(@post) do |f| %>
+  <%= f.text_field :title, placeholder: "Post Title" %>
+  <%= f.text_area :body, placeholder: "Place complaint and/or bragging here...", rows: "6" %>
+  <%= f.submit data: {disable_with: 'Saving...'}, class: 'btn btn-default btn-block' %>
+<% end %>
