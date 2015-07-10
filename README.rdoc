@@ -2,6 +2,10 @@
 
 This is an ongoing project.
 
+=Heroku link:
+
+https://protected-plains-6279.herokuapp.com/
+
 == Requirements:
 
 Ruby > 2.0
@@ -14,15 +18,15 @@ To create this app on your own system follow the prompts below
 
 Start Postgres
 
-Run Terminal Commands 
+Run Terminal Commands
 
 $ https://github.com/alexcaste/epicodus-portfolio.git
 
-$ bundler install 
+$ bundler install
 
-$ rake db:create 
+$ rake db:create
 
-$ rake db:migrate 
+$ rake db:migrate
 
 $ rails s
 
