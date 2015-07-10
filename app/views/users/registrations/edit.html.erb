@@ -1,0 +1,41 @@
+<h2>Edit <%= current_user.email %></h2>
+
+<%= image_tag @user.avatar.url(:thumb) %>
+
+<%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+
+  <%= f.text_field :first_name, autofocus: :true, placeholder: "John" %>
+  <%= f.text_field :last_name, placeholder: "Digweed" %>
+  <%= f.email_field :email, placeholder: "john@johndigweed.com" %>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+  <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <%= f.password_field :password, autocomplete: "off", placeholder: "(leave blank if you don't want to change it)" %>
+
+  <%= f.password_field :password_confirmation, autocomplete: "off" %>
+
+
+  <hr>
+
+  <%= f.file_field :avatar %>
+
+  <%= f.check_box :admin, value: true %>
+  <hr>
+  <%= f.password_field :current_password, autocomplete: "off", placeholder: "(we need your current password to confirm your changes)"%>
+
+
+  <%= f.submit "Update", data: {disable_with: 'Saving...'}, class: "btn btn-block btn-default"%>
+  <% end %>
+<br>
+<hr>
+<div class="text-center">
+  <%= link_to "Unhappy?", cancels_path %>
+</div>
+<hr>
+<div class="text-center">
+  <%= link_to "Back", :back %>
+</div>

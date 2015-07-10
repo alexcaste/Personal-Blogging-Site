@@ -9,12 +9,21 @@ source 'https://rubygems.org'
   gem 'turbolinks'
   gem 'bootstrap-sass'
   gem 'bootswatch-rails'
+  gem 'devise'
+  gem 'pry'
+  gem 'bootstrap_form'
+  gem 'paperclip'
+  gem 'cancancan'
+  gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
+  gem 'textacular', '~> 3.0'
+  gem 'will_paginate', '~> 3.0.6'
 
 group :development do
   gem 'byebug'
   gem 'web-console'
   gem 'spring'
   gem 'quiet_assets'
+  gem 'letter_opener'
 end
 
 group :test, :development do
@@ -25,4 +34,7 @@ end
 group :test do
   gem 'shoulda-matchers'
   gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'simplecov', require: false
+
 end

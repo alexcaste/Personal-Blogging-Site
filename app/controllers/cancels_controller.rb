@@ -1,0 +1,4 @@
+class CancelsController < ApplicationController
+
+
+end

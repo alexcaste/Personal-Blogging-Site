@@ -1,12 +1,10 @@
 <%= render "layouts/errors", :object => @skill %>
 
 <div id="container">
-  <%= form_for(@skill) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
+  <%= bootstrap_form_for(@skill) do |f| %>
+    <%= f.text_field :name, placeholder: "Example: Swift Coding Language" %>
+    <%= f.text_area :description, rows: "4", placeholder: "Example: A few sentences describing how badass you are with that skill." %>
 
-    <%= f.submit :class => "btn btn-sm btn-sucess"%>
+    <%= f.submit "Submit", data: {disable_with: 'Saving...'}, class: "btn btn-sm btn-block btn-primary", id: "submit-skill"%>
   <% end %>
 </div>
