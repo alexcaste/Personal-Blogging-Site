@@ -2,9 +2,9 @@
 
 <div id="container">
   <%= bootstrap_form_for [@skill, @project] do |f| %>
-    <%= f.text_field :name, placeholder: "Example: Terminal Hair Website" %>
-    <%= f.text_area :description, rows: "4", placeholder: "Example: A website where users can showcase and upload pictures of their locally grown artisanl beards." %>
-    <%= f.text_field :link, placeholder: "www.example-link.com" %>
+    <%= f.text_field :name, placeholder: "Example: Terminal Hair Website", id: "name" %>
+    <%= f.text_area :description, rows: "4", placeholder: "Example: A website where users can showcase and upload pictures of their locally grown artisanl beards.", id: "description" %>
+    <%= f.text_field :link, placeholder: "www.example-link.com", id: "link" %>
 
     <%= f.submit "Submit", data: {disable_with: 'Saving...'}, class: "btn btn-sm btn-block btn-primary", id: "submit-project"%>
 

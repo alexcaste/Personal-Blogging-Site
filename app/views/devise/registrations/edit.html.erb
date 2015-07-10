@@ -12,24 +12,24 @@
 
 <div class="row">
   <hr>
-  <%= f.text_field :first_name, autofocus: :true, placeholder: "John" %>
-  <%= f.text_field :last_name, placeholder: "Digweed" %>
-  <%= f.email_field :email, placeholder: "john@johndigweed.com" %>
+  <%= f.text_field :first_name, autofocus: :true, placeholder: "John", id: "first" %>
+  <%= f.text_field :last_name, placeholder: "Digweed", id: "last"  %>
+  <%= f.email_field :email, placeholder: "john@johndigweed.com", id: "email"  %>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
   <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <%= f.password_field :password, autocomplete: "off", placeholder: "(leave blank if you don't want to change it)" %>
+  <%= f.password_field :password, autocomplete: "off", placeholder: "(leave blank if you don't want to change it)", id: "password"  %>
 
-  <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  <%= f.password_field :password_confirmation, autocomplete: "off", id: "password-confirm"  %>
 </div>
 <div class="row">
   <hr>
-  <%= f.password_field :current_password, autocomplete: "off", placeholder: "(we need your current password to confirm your changes)"%>
+  <%= f.password_field :current_password, autocomplete: "off", placeholder: "(we need your current password to confirm your changes)", id: "confirm" %>
 
 
-  <%= f.submit "Update", data: {disable_with: 'Saving...'}, class: "btn btn-block btn-default"%>
+  <%= f.submit "Update", data: {disable_with: 'Saving...'}, class: "btn btn-block btn-default", id: "update" %>
   <% end %>
 
 </div>

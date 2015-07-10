@@ -1,16 +1,16 @@
 require 'rails_helper'
 
-describe "the edit a project process" do
-  it "edits a project" do
-    skill = Skill.create(:name => 'This Sucks', :description => 'Wish I had read the instructions better')
-    visit skill_path(skill)
-    click_on 'Add a Project'
-    fill_in 'Name', :with => 'Blah Blah'
-    fill_in 'Description', :with => 'Still stupid'
-    fill_in 'Link', :with => 'yep hate this'
-    click_on 'Create Project'
-    click_on 'Blah Blah'
+describe "the delete a project process" do
+  it "deletes a project" do
+    user = FactoryGirl.create(:user, admin: true)
+    skill = FactoryGirl.create(:skill, user_id: user.id)
+    project = FactoryGirl.create(:project, skill_id: skill.id)
+    user.skills.push(skill)
+    skill.projects.push(project)
+    login(user)
+
+    visit skill_project_path(skill, project)
     click_on 'Delete'
-    expect(page).to have_content 'This Sucks'
+    expect(page).to have_content skill.name
   end
 end

@@ -3,15 +3,15 @@
 <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-    <%= f.text_field :first_name, autofocus: :true, placeholder: "Example: John" %>
-    <%= f.text_field :last_name, placeholder: "Example: Digweed" %>
-    <%= f.email_field :email, placeholder: "Example: john@johndigweed.com" %>
+    <%= f.text_field :first_name, autofocus: :true, placeholder: "Example: John", id: "first" %>
+    <%= f.text_field :last_name, placeholder: "Example: Digweed", id: "last"  %>
+    <%= f.email_field :email, placeholder: "Example: john@johndigweed.com", id: "email"  %>
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    <%= f.submit "Sign up", data: {disable_with: 'Saving...'}, class: "btn btn-block btn-default"%>
+    <%= f.password_field :password, autocomplete: "off", id: "password"  %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", id: "confirm"  %>
+    <%= f.submit "Sign up", data: {disable_with: 'Saving...'}, class: "btn btn-block btn-default", id: "submit"%>
 
 <% end %>
 

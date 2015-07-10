@@ -18,3 +18,10 @@
 
 $(".alert").alert();
 window.setTimeout(function() { $(".alert").alert().fadeOut("slow"); }, 2500);
+
+
+jQuery(function($) {
+$("tr[data-link]").click(function() {
+window.location = this.dataset.link
+});
+})

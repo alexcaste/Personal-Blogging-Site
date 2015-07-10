@@ -17,6 +17,6 @@
   <% end %>
 </div>
 
-<% if current_user == @user %>
-<%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-block btn-default" %>
+<% if can? :manage, @user %>
+<%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-block btn-default", id: 'edit-user'%>
 <% end %>

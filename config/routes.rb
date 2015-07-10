@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   }
 
   resources :home, :only => [:index]
-  resources :users, :only => [:show]
+  resources :users, :only => [:show, :index]
   resources :cancels, :only => [:index]
 
   resources :skills do

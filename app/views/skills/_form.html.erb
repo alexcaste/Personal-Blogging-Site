@@ -2,8 +2,8 @@
 
 <div id="container">
   <%= bootstrap_form_for(@skill) do |f| %>
-    <%= f.text_field :name, placeholder: "Example: Swift Coding Language" %>
-    <%= f.text_area :description, rows: "4", placeholder: "Example: A few sentences describing how badass you are with that skill." %>
+    <%= f.text_field :name, placeholder: "Example: Swift Coding Language", id: "name" %>
+    <%= f.text_area :description, rows: "4", placeholder: "Example: A few sentences describing how badass you are with that skill.", id: "description" %>
 
     <%= f.submit "Submit", data: {disable_with: 'Saving...'}, class: "btn btn-sm btn-block btn-primary", id: "submit-skill"%>
   <% end %>

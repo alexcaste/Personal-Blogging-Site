@@ -5,10 +5,10 @@
     <h1><%= yield(:title) %>
     <% if can? :update, @project %>
       <span class="pull-right">
-        <%= link_to "Edit", edit_skill_project_path(@skill, @project), :class => "btn btn-xs btn-warning" %>
+        <%= link_to "Edit", edit_skill_project_path(@skill, @project), :class => "btn btn-xs btn-warning", id: "edit" %>
         <%= link_to "Delete", skill_project_path(@skill, @project),
                                   :data => {:confirm => "Are you sure?",
-                                  :method => "delete"}, :class => "btn btn-danger btn-xs " %>
+                                  :method => "delete"}, :class => "btn btn-danger btn-xs", id: "delete_project"  %>
       </span>
     <% end %>
     </h1>

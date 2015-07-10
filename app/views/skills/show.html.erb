@@ -5,10 +5,10 @@
     <% if can? :update, @skill %>
 
       <span class="pull-right">
-        <%= link_to "Edit", edit_skill_path(@skill), :class => "btn btn-xs btn-warning" %>
+        <%= link_to "Edit", edit_skill_path(@skill), :class => "btn btn-xs btn-warning", id: "edit" %>
         <%= link_to "Delete", skill_path(@skill),
                                   :data => {:confirm => "Are you sure?",
-                                  :method => "delete"}, :class => "btn btn-danger btn-xs " %>
+                                  :method => "delete"}, :class => "btn btn-danger btn-xs ", id: "delete" %>
       </span>
     <% end %>
     </h1>
@@ -22,7 +22,7 @@
 </p>
 <% if can? :update, @skill %>
     <span class="pull-right">
-      <%= link_to "Add a Project", new_skill_project_path(@skill), :class => "btn btn-xs btn-success" %>
+      <%= link_to "Add a Project", new_skill_project_path(@skill), :class => "btn btn-xs btn-success", id: "add-project" %>
     </span>
 <% end %>
 <% if @skill.projects.any? %>

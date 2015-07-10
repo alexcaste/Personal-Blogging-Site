@@ -6,7 +6,7 @@
       <div class="page-header">
         <% if can? :update, @skill %>
           <span class="pull-right ">
-            <%= link_to "Add Even More Skills", new_skill_path(@skill), :class => "btn btn-xs btn-default" %><br>
+            <%= link_to "Add Even More Skills", new_skill_path(@skill), :class => "btn btn-xs btn-default", id: "add-skills"%><br>
           </span>
         <% end %>
         <h3>Alexandar Castaneda has skills you need:</h4>
