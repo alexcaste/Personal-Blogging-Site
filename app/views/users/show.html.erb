@@ -6,8 +6,8 @@
   <span style="float: left; margin-right: 20px; margin-bottom: 20px"><%= image_tag @user.avatar.url(:medium) %></span>
 
 <% if current_user != nil %>
-  <p>
-    Email: <%= @user.email %><br>
+  <p class="lead">
+    <strong>Email:</strong> <%= @user.email %><br>
   </p>
   <% else %>
     <div style="margin-top: 60px" class="col-md-3 col-md-offset-2 text-center">

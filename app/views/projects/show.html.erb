@@ -3,12 +3,14 @@
 <div class ="container">
   <div class="page-header">
     <h1><%= yield(:title) %>
+    <% if can? :update, @project %>
       <span class="pull-right">
         <%= link_to "Edit", edit_skill_project_path(@skill, @project), :class => "btn btn-xs btn-warning" %>
         <%= link_to "Delete", skill_project_path(@skill, @project),
                                   :data => {:confirm => "Are you sure?",
                                   :method => "delete"}, :class => "btn btn-danger btn-xs " %>
-    </span>
+      </span>
+    <% end %>
     </h1>
   </div>
 
@@ -22,7 +24,7 @@
     <span class="lead">
       Link:
     </span>
-    <%= @project.link %>
+    <a href="<%= @project.link %>"><%= @project.link %></a>
   </p>
 
 <hr>

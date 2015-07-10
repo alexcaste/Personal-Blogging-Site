@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
   load_and_authorize_resource
 
-
   def show
     @skill = Skill.find(params[:skill_id])
     @project = @skill.projects.find(params[:id])

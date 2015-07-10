@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  root :to => 'skills#index'
+  root :to => 'home#index'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
+
+  resources :home, :only => [:index]
   resources :users, :only => [:show]
   resources :cancels, :only => [:index]
 

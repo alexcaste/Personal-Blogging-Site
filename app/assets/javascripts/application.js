@@ -11,12 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-sprockets
-//= require bootstrap
 //= require jquery_ujs
+//= require bootstrap
 //= require turbolinks
 //= require_tree .
-
 
 $(".alert").alert();
 window.setTimeout(function() { $(".alert").alert().fadeOut("slow"); }, 2500);

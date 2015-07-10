@@ -10,6 +10,7 @@ class Ability
       if user.admin
         can :manage, :all
       elsif user.id != nil
+        can :read, :all
         can :manage, user
       else
         can :read, :all
