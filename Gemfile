@@ -36,5 +36,7 @@ group :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'simplecov', require: false
-
 end
+
+gem 'rails_12factor', group: :production
+ruby "2.2.0"
