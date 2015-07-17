@@ -1,3 +1,4 @@
+== Completely Unprepared for this week.
 = Alexandar Castaneda Epicodus Portfolio
 
 This is an ongoing project.
@@ -27,6 +28,8 @@ $ bundler install
 $ rake db:create
 
 $ rake db:migrate
+
+$ rake db:seed
 
 $ rails s
 
