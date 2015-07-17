@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
@@ -21,7 +22,7 @@ window.setTimeout(function() { $(".alert").alert().fadeOut("slow"); }, 2500);
 
 
 jQuery(function($) {
-$("tr[data-link]").click(function() {
-window.location = this.dataset.link
-});
+  $("tr[data-link]").click(function() {
+    window.location = this.dataset.link
+  });
 })

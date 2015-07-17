@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20150710211538) do
     t.integer  "skill_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "string"
     t.string   "link"
   end
 

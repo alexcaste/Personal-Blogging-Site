@@ -1,20 +1,20 @@
 <%= content_for :title, "Posts" %>
 <h1 class="page-header text-center">Current Posts</h1>
 
-<% @posts.each do |posts| %>
+<% @posts.each do |post| %>
     <div class="panel panel-default">
       <div class="panel-body">
-        <p class="lead text-center "> <strong><%= link_to posts.title, post_path(posts) %></strong></p>
+        <p class="lead text-center "> <strong><%= link_to post.title, post_path(post) %></strong></p>
           <div class=" well ">
-            <%= posts.summarize %>
+            <%= post.summarize %>
             <br>
 
           </div>
             <div style="float: left;">
-              <%= posts.comments.length %> Comments(s)
+              <%= post.comments.length %> Comments(s)
             </div>
             <div class="pull-right">
-              <small>Posted by <cite><%= link_to posts.user.first_name, user_path(posts.user) %></cite></small>
+              <small>Posted by <cite><%= link_to post.user.first_name, user_path(post.user) %></cite></small>
             </div>
       </div>
     </div>

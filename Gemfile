@@ -17,6 +17,7 @@ source 'https://rubygems.org'
   gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
   gem 'textacular', '~> 3.0'
   gem 'will_paginate', '~> 3.0.6'
+  gem 'jquery-turbolinks' 
 
 group :development do
   gem 'byebug'

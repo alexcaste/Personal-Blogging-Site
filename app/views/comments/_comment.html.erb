@@ -1,0 +1,15 @@
+<blockquote>
+<p class="row well">
+    <%= comment.body %>
+    <% if can? :update, comment %>
+      <span class="pull-right">
+        <%= link_to "Edit", edit_post_comment_path(@post, comment), :class => "btn btn-xs btn-warning", id: "edit" %>
+        <%= link_to "Delete", post_comment_path(@post, comment),
+                                  :data => {:confirm => "Are you sure?",
+                                  :method => "delete"}, :class => "btn btn-danger btn-xs ", id: "delete" %>
+      </span>
+
+    <% end %>
+  <small>says <cite><%= link_to comment.user.first_name, user_path(comment.user.first_name) %></cite></small>
+  </p>
+</blockquote>

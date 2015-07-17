@@ -11,15 +11,20 @@ class CommentsController < ApplicationController
     if @comment.save
       @post.comments.push(@comment)
       current_user.comments.push(@comment)
-      # @comment.comment_email
-      redirect_to post_path(@post)
-      flash[:notice] = "Your comment has been submitted!"
+      respond_to do |format|
+        flash[:notice] = "Your comment has been submitted!"
+        format.html { redirect_to post_path(@post) }
+        format.js
+      end
     else
-      flash[:alert] = "There was a problem with your comment."
-      redirect_to post_path(@post)
+      respond_to do |format|
+        flash[:notice] = "Please try again.  There was a problem with your comment."
+        format.html { redirect_to post_path(@post) }
+        format.js
+      end
     end
-
   end
+
   def edit
 
   end

@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   }
 
   resources :home, :only => [:index]
+
+  resources :references, :only => [:index]
+
   resources :users, :only => [:show, :index]
   resources :cancels, :only => [:index]
 

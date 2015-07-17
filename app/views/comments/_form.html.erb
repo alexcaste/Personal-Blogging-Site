@@ -1,5 +1,5 @@
 <%= render "layouts/errors", object: @comment %>
-<%= bootstrap_form_for([@post, @comment]) do |f| %>
+<%= bootstrap_form_for [@post, @comment], remote: true do |f| %>
   <%= f.text_area :body, placeholder: 'Join the conversation.', hide_label: true  %>
-  <%= f.submit 'Comment', data:{disable_with: 'Commenting....'}, class: 'btn btn-primary btn-block' %>
+  <%= f.submit 'Submit', data:{disable_with: 'Commenting....'}, class: 'btn btn-primary btn-block' %>
 <% end %>

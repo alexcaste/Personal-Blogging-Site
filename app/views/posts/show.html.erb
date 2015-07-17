@@ -39,6 +39,9 @@
     </p>
   </blockquote>
 <% end %>
-<div id="answer-question">
-  <%= render 'comments/form' %>
+  <div id="new-comment">
+
+  </div>
+  <%= link_to "Add Comment", new_post_comment_path(@post), class: 'btn btn-primary btn-block', id: "comment-link", remote: true %>
+<div id="add-comment" class="add-comment">
 </div>
