@@ -1,7 +1,6 @@
-== Completely Unprepared for this week.
-= Alexandar Castaneda Epicodus Portfolio
+= Alexandar Castaneda Epicodus Final Assessment
 
-This is an ongoing project.
+This app uses Ruby with Rails, Javascript, CSS & HTML to display a sample portfolio app with authorization, authentication and blogging capability.
 
 =Heroku link:
 
