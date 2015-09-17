@@ -17,7 +17,9 @@ source 'https://rubygems.org'
   gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
   gem 'textacular', '~> 3.0'
   gem 'will_paginate', '~> 3.0.6'
-  gem 'jquery-turbolinks' 
+  gem 'jquery-turbolinks'
+  gem 'newrelic_rpm'
+
 
 group :development do
   gem 'byebug'
@@ -40,4 +42,4 @@ group :test do
 end
 
 gem 'rails_12factor', group: :production
-ruby "2.2.0"
+ruby "2.2.2"
