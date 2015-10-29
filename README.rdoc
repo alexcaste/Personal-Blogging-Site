@@ -20,7 +20,7 @@ Start Postgres
 
 Run Terminal Commands
 
-$ git clone https://github.com/alexcaste/epicodus-portfolio.git
+$ git clone https://github.com/alexcaste/Personal-Blogging-Site.git
 
 $ bundler install
 
